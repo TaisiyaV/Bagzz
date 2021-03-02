@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57212D5725EE1D3A008499C8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57212D5625EE1D3A008499C8 /* CollectionViewCell.swift */; };
+		57212D5925EE1D45008499C8 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57212D5825EE1D45008499C8 /* CollectionViewCell2.swift */; };
+		577EBD8325EE6280001CD846 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EBD8225EE6280001CD846 /* TabBarController.swift */; };
 		57BC6AC425ECD10A00B54665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC6AC325ECD10A00B54665 /* AppDelegate.swift */; };
-		57BC6AC625ECD10A00B54665 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC6AC525ECD10A00B54665 /* SceneDelegate.swift */; };
 		57BC6AC825ECD10A00B54665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC6AC725ECD10A00B54665 /* ViewController.swift */; };
 		57BC6ACB25ECD10A00B54665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6AC925ECD10A00B54665 /* Main.storyboard */; };
 		57BC6ACD25ECD10C00B54665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6ACC25ECD10C00B54665 /* Assets.xcassets */; };
 		57BC6AD025ECD10C00B54665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6ACE25ECD10C00B54665 /* LaunchScreen.storyboard */; };
+		57BC6B0225EDF14600B54665 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC6B0125EDF14600B54665 /* HomeView.swift */; };
+		7299E9C74F234441E8BFB71F /* Pods_Bagzz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2965B3C646BEC931FDA9F0 /* Pods_Bagzz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D2965B3C646BEC931FDA9F0 /* Pods_Bagzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bagzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57212D5625EE1D3A008499C8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		57212D5825EE1D45008499C8 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
+		577EBD8225EE6280001CD846 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		57BC6AC025ECD10A00B54665 /* Bagzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bagzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BC6AC325ECD10A00B54665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57BC6AC525ECD10A00B54665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		57BC6AC725ECD10A00B54665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57BC6ACA25ECD10A00B54665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57BC6ACC25ECD10C00B54665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BC6ACF25ECD10C00B54665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57BC6AD125ECD10C00B54665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57BC6B0125EDF14600B54665 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6EAA907A79EF958872BC8D1B /* Pods-Bagzz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bagzz.release.xcconfig"; path = "Target Support Files/Pods-Bagzz/Pods-Bagzz.release.xcconfig"; sourceTree = "<group>"; };
+		AA46FAAA342191007481A2D8 /* Pods-Bagzz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bagzz.debug.xcconfig"; path = "Target Support Files/Pods-Bagzz/Pods-Bagzz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7299E9C74F234441E8BFB71F /* Pods_Bagzz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		098974657C01A7AB0DABF808 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA46FAAA342191007481A2D8 /* Pods-Bagzz.debug.xcconfig */,
+				6EAA907A79EF958872BC8D1B /* Pods-Bagzz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1354EFA0F2427E2336C3EB35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D2965B3C646BEC931FDA9F0 /* Pods_Bagzz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		57BC6AB725ECD10A00B54665 = {
 			isa = PBXGroup;
 			children = (
 				57BC6AC225ECD10A00B54665 /* Bagzz */,
 				57BC6AC125ECD10A00B54665 /* Products */,
+				098974657C01A7AB0DABF808 /* Pods */,
+				1354EFA0F2427E2336C3EB35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,8 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				57BC6AC325ECD10A00B54665 /* AppDelegate.swift */,
-				57BC6AC525ECD10A00B54665 /* SceneDelegate.swift */,
 				57BC6AC725ECD10A00B54665 /* ViewController.swift */,
+				577EBD8225EE6280001CD846 /* TabBarController.swift */,
+				57BC6B0125EDF14600B54665 /* HomeView.swift */,
+				57212D5625EE1D3A008499C8 /* CollectionViewCell.swift */,
+				57212D5825EE1D45008499C8 /* CollectionViewCell2.swift */,
 				57BC6AC925ECD10A00B54665 /* Main.storyboard */,
 				57BC6ACC25ECD10C00B54665 /* Assets.xcassets */,
 				57BC6ACE25ECD10C00B54665 /* LaunchScreen.storyboard */,
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57BC6AD425ECD10C00B54665 /* Build configuration list for PBXNativeTarget "Bagzz" */;
 			buildPhases = (
+				215EB4E876234C23E87BE452 /* [CP] Check Pods Manifest.lock */,
 				57BC6ABC25ECD10A00B54665 /* Sources */,
 				57BC6ABD25ECD10A00B54665 /* Frameworks */,
 				57BC6ABE25ECD10A00B54665 /* Resources */,
+				0F6EC23A3AABBEE877C0CAD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +168,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F6EC23A3AABBEE877C0CAD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bagzz/Pods-Bagzz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bagzz/Pods-Bagzz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bagzz/Pods-Bagzz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		215EB4E876234C23E87BE452 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bagzz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57BC6ABC25ECD10A00B54665 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57212D5725EE1D3A008499C8 /* CollectionViewCell.swift in Sources */,
+				57BC6B0225EDF14600B54665 /* HomeView.swift in Sources */,
+				57212D5925EE1D45008499C8 /* CollectionViewCell2.swift in Sources */,
+				577EBD8325EE6280001CD846 /* TabBarController.swift in Sources */,
 				57BC6AC825ECD10A00B54665 /* ViewController.swift in Sources */,
 				57BC6AC425ECD10A00B54665 /* AppDelegate.swift in Sources */,
-				57BC6AC625ECD10A00B54665 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +362,7 @@
 		};
 		57BC6AD525ECD10C00B54665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA46FAAA342191007481A2D8 /* Pods-Bagzz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +381,7 @@
 		};
 		57BC6AD625ECD10C00B54665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EAA907A79EF958872BC8D1B /* Pods-Bagzz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
