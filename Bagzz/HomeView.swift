@@ -5,6 +5,10 @@ import SnapKit
 
 class HomeView: UIView {
 
+    var carouselArray = ["bags1", "bags2"]
+    var catalogArray = ["image1", "image2", "image3", "image4"]
+
+    
     let menuButton: UIButton = {
         let b = UIButton()
         b.setImage(UIImage(named: "button"), for: .normal)
@@ -31,8 +35,6 @@ class HomeView: UIView {
         let cellWidth = 351
         let cellHeight = 195
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-
-        layout.estimatedItemSize = CGSize(width: cellWidth, height: cellHeight)
 
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -64,8 +66,6 @@ class HomeView: UIView {
         let cellWidth = 170
         let cellHeight = 210
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-
-        layout.estimatedItemSize = CGSize(width: cellWidth, height: cellHeight)
 
         layout.minimumInteritemSpacing = 13
         layout.minimumLineSpacing = 24
@@ -164,7 +164,7 @@ class HomeView: UIView {
         let visibleItems: NSArray = carouselCollectionView.indexPathsForVisibleItems as NSArray
         let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
         let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
-        if nextItem.row < 5 && nextItem.row >= 0 {
+        if nextItem.row < carouselArray.count && nextItem.row >= 0 {
             carouselCollectionView.scrollToItem(at: nextItem, at: .right, animated: true)
         }
     }
@@ -173,7 +173,7 @@ class HomeView: UIView {
         let visibleItems: NSArray = carouselCollectionView.indexPathsForVisibleItems as NSArray
         let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
         let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-        if nextItem.row < 5 {
+        if nextItem.row < carouselArray.count {
                carouselCollectionView.scrollToItem(at: nextItem, at: .left, animated: true)
         }
     }
@@ -183,20 +183,25 @@ class HomeView: UIView {
 extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (collectionView == carouselCollectionView) {
-            return 5
+        if collectionView == carouselCollectionView {
+            return carouselArray.count
         }
-        return 6
+    
+        return catalogArray.count        
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = carouselCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        if (collectionView == catalogCollectionView) {
+        if collectionView == catalogCollectionView {
             let cell2 = catalogCollectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! CollectionViewCell2
             cell2.backgroundColor = UIColor(named: "color")
+            cell2.image.image = UIImage(named: catalogArray[indexPath.item])
             return cell2
         }
+        
+        let cell = carouselCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        cell.image.image = UIImage(named: carouselArray[indexPath.item])
+        
         return cell
     }
 
