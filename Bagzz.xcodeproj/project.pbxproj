@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57212D5725EE1D3A008499C8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57212D5625EE1D3A008499C8 /* CollectionViewCell.swift */; };
 		57212D5925EE1D45008499C8 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57212D5825EE1D45008499C8 /* CollectionViewCell2.swift */; };
+		573612BE25F0FEE8009CBE19 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573612BD25F0FEE8009CBE19 /* UIImageView.swift */; };
 		577EBD8325EE6280001CD846 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EBD8225EE6280001CD846 /* TabBarController.swift */; };
 		57BC6AC425ECD10A00B54665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC6AC325ECD10A00B54665 /* AppDelegate.swift */; };
 		57BC6AC825ECD10A00B54665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC6AC725ECD10A00B54665 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		4D2965B3C646BEC931FDA9F0 /* Pods_Bagzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bagzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57212D5625EE1D3A008499C8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		57212D5825EE1D45008499C8 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
+		573612BD25F0FEE8009CBE19 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		577EBD8225EE6280001CD846 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		57BC6AC025ECD10A00B54665 /* Bagzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bagzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BC6AC325ECD10A00B54665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		573612BF25F0FF0E009CBE19 /* Expansions */ = {
+			isa = PBXGroup;
+			children = (
+				573612BD25F0FEE8009CBE19 /* UIImageView.swift */,
+			);
+			path = Expansions;
+			sourceTree = "<group>";
+		};
 		57BC6AB725ECD10A00B54665 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 				57BC6B0125EDF14600B54665 /* HomeView.swift */,
 				57212D5625EE1D3A008499C8 /* CollectionViewCell.swift */,
 				57212D5825EE1D45008499C8 /* CollectionViewCell2.swift */,
+				573612BF25F0FF0E009CBE19 /* Expansions */,
 				57BC6AC925ECD10A00B54665 /* Main.storyboard */,
 				57BC6ACC25ECD10C00B54665 /* Assets.xcassets */,
 				57BC6ACE25ECD10C00B54665 /* LaunchScreen.storyboard */,
@@ -218,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573612BE25F0FEE8009CBE19 /* UIImageView.swift in Sources */,
 				57212D5725EE1D3A008499C8 /* CollectionViewCell.swift in Sources */,
 				57BC6B0225EDF14600B54665 /* HomeView.swift in Sources */,
 				57212D5925EE1D45008499C8 /* CollectionViewCell2.swift in Sources */,

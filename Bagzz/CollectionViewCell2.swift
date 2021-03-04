@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewCell2: UICollectionViewCell {
     
-    let image: UIImageView = {
+    var image: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "image1")
         iv.contentMode = .scaleAspectFit

@@ -2,14 +2,14 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 
 class HomeView: UIView {
 
+    var bags = [BagCatalog]()
     var carouselArray = ["bags1", "bags2"]
-//    var catalogArray = ["image1", "image2", "image3", "image4"]
-    
-    
+
     let menuButton: UIButton = {
         let b = UIButton()
         b.setImage(UIImage(named: "button"), for: .normal)
@@ -101,6 +101,8 @@ class HomeView: UIView {
         
         carouselCollectionView.backgroundColor = .white
         catalogCollectionView.backgroundColor = .white
+        
+        fetchData()
 
     }
     
@@ -115,7 +117,7 @@ class HomeView: UIView {
             m.top.equalToSuperview().inset(63.0)
             m.left.equalToSuperview().inset(12.0)
             m.height.equalTo(14.0)
-            m.width.equalTo(24)
+            m.width.equalTo(24.0)
         }
         
         titleLabel.snp.makeConstraints { (m) in
@@ -182,6 +184,27 @@ class HomeView: UIView {
         }
     }
     
+    func fetchData() {
+
+        AF.request("https://jsonplaceholder.typicode.com/photos", method: .get).validate().responseJSON { response in
+
+            switch response.result {
+            case .success(let value):
+
+                for item in value as! [[String: AnyObject]] {
+                    let bagsData = BagCatalog(title: item["title"] as! String, thumbnailUrl: item["thumbnailUrl"] as! String)
+                    self.bags.append(bagsData)
+                    self.catalogCollectionView.reloadData()
+                }
+
+            case .failure(_):
+                print("error")
+            }
+
+        }
+
+    }
+    
 }
 
 extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -192,8 +215,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
             return carouselArray.count
         }
 
-//        return  ViewController().bags.count
-        return 10
+        return  bags.count
 
     }
 
@@ -204,8 +226,8 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
             
             cell2.backgroundColor = UIColor(named: "color")
             
-//            cell2.image.image = UIImage(named: catalogArray[indexPath.item])
-//            cell2.titleLabel.text = ViewController().bags[indexPath.item].title
+            cell2.image.downloaded(from: bags[indexPath.item].thumbnailUrl)
+            cell2.titleLabel.text = bags[indexPath.item].title
        
             return cell2
         }
@@ -217,6 +239,5 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
 }
-
 
 
