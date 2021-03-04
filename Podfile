@@ -7,4 +7,5 @@ use_frameworks!
 
 target 'Bagzz' do
     pod 'SnapKit', '~> 4.0'
+    pod 'Alamofire', '~> 5.2'
 end
