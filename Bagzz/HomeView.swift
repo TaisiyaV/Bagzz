@@ -8,8 +8,11 @@ import Alamofire
 class HomeView: UIView {
 
     var bags = [BagCatalog]()
+    var arrayToDisplay: [BagCatalog] = []
     var carouselArray = ["bags1", "bags2"]
+    var isLoading = false
 
+    
     let menuButton: UIButton = {
         let b = UIButton()
         b.setImage(UIImage(named: "button"), for: .normal)
@@ -104,6 +107,8 @@ class HomeView: UIView {
         
         fetchData()
 
+ 
+
     }
     
     
@@ -111,55 +116,56 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+
     
     func elementConstraints() {
         menuButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(63.0)
-            m.left.equalToSuperview().inset(12.0)
-            m.height.equalTo(14.0)
-            m.width.equalTo(24.0)
+            m.top.equalToSuperview().inset(63)
+            m.left.equalToSuperview().inset(12)
+            m.height.equalTo(14)
+            m.width.equalTo(24)
         }
         
         titleLabel.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(53.0)
-            m.left.equalTo(menuButton.snp.right).inset(-18.0)
-            m.height.equalTo(29.0)
+            m.top.equalToSuperview().inset(53)
+            m.left.equalTo(menuButton.snp.right).inset(-18)
+            m.height.equalTo(29)
         }
         
         photoImage.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(54.0)
-            m.right.equalToSuperview().inset(12.0)
-            m.height.width.equalTo(32.0)
+            m.top.equalToSuperview().inset(54)
+            m.right.equalToSuperview().inset(12)
+            m.height.width.equalTo(32)
         }
         
         carouselCollectionView.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(110.0)
-            m.left.right.equalToSuperview().inset(12.0)
-            m.width.equalTo(351.0)
-            m.height.equalTo(195.0)
+            m.top.equalToSuperview().inset(110)
+            m.left.right.equalToSuperview().inset(12)
+            m.width.equalTo(351)
+            m.height.equalTo(195)
         }
         
         leftButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(264.0)
-            m.left.equalToSuperview().inset(249.5)
-            m.height.width.equalTo(51.0)
+            m.top.equalToSuperview().inset(264)
+            m.left.equalToSuperview().inset(249)
+            m.height.width.equalTo(51)
         }
         
         rightButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(264.0)
-            m.right.equalToSuperview().inset(22.0)
-            m.height.width.equalTo(51.0)
+            m.top.equalToSuperview().inset(264)
+            m.right.equalToSuperview().inset(22)
+            m.height.width.equalTo(51)
         }
         leftButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(264.0)
+            m.top.equalToSuperview().inset(264)
             m.left.equalToSuperview().inset(249.5)
-            m.height.width.equalTo(51.0)
+            m.height.width.equalTo(51)
         }
         
         catalogCollectionView.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(345.0)
-            m.left.right.equalToSuperview().inset(12.0)
-            m.width.equalToSuperview().inset(11.0)
+            m.top.equalToSuperview().inset(345)
+            m.left.right.equalToSuperview().inset(12)
+            m.width.equalToSuperview().inset(11)
             m.bottom.equalToSuperview()
         }
 
@@ -184,28 +190,30 @@ class HomeView: UIView {
         }
     }
     
+    func loadData() {
+        
+    }
+    
     func fetchData() {
 
         AF.request("https://jsonplaceholder.typicode.com/photos", method: .get).validate().responseJSON { response in
-
             switch response.result {
             case .success(let value):
-
                 for item in value as! [[String: AnyObject]] {
                     let bagsData = BagCatalog(title: item["title"] as! String, thumbnailUrl: item["thumbnailUrl"] as! String)
                     self.bags.append(bagsData)
-                    self.catalogCollectionView.reloadData()
                 }
-
             case .failure(_):
                 print("error")
             }
-
+            self.arrayToDisplay = Array(self.bags[0..<20])
+            self.catalogCollectionView.reloadData()
         }
-
     }
     
 }
+
+
 
 extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -215,8 +223,8 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
             return carouselArray.count
         }
 
-        return  bags.count
-
+//        return  bags.count
+        return arrayToDisplay.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -226,8 +234,10 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
             
             cell2.backgroundColor = UIColor(named: "color")
             
-            cell2.image.downloaded(from: bags[indexPath.item].thumbnailUrl)
-            cell2.titleLabel.text = bags[indexPath.item].title
+//            cell2.image.downloaded(from: bags[indexPath.item].thumbnailUrl)
+//            cell2.titleLabel.text = bags[indexPath.item].title
+            cell2.image.downloaded(from: arrayToDisplay[indexPath.item].thumbnailUrl)
+            cell2.titleLabel.text = arrayToDisplay[indexPath.item].title
        
             return cell2
         }
@@ -237,6 +247,28 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        if indexPath.row == arrayToDisplay.count - 2 && !self.isLoading {
+        
+            if !self.isLoading {
+                self.isLoading = true
+                let start = arrayToDisplay.count
+                let end = start + 50
+                DispatchQueue.global().async {
+                    for i in start...end {
+                        self.arrayToDisplay.append(self.bags[i])
+                    }
+                    DispatchQueue.main.async {
+                        self.catalogCollectionView.reloadData()
+                        self.isLoading = false
+                    }
+                }
+            }
+        }
+    }
+    
 
 }
 

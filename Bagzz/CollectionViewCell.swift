@@ -25,8 +25,8 @@ class CollectionViewCell: UICollectionViewCell {
         
         image.snp.makeConstraints { (m) in
             m.top.equalToSuperview()
-            m.width.equalTo(351.0)
-            m.height.equalTo(195.0)
+            m.width.equalTo(351)
+            m.height.equalTo(195)
         }
         
     }

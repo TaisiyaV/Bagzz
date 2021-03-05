@@ -50,30 +50,30 @@ class CollectionViewCell2: UICollectionViewCell {
         
         
         image.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(6.0)
-            m.left.equalToSuperview().inset(31.0)
-            m.right.equalToSuperview().inset(28.0)
-            m.width.height.equalTo(111.0)
+            m.top.equalToSuperview().inset(6)
+            m.left.equalToSuperview().inset(31)
+            m.right.equalToSuperview().inset(28)
+            m.width.height.equalTo(111)
         }
         
         titleLabel.snp.makeConstraints { (m) in
-            m.top.equalTo(image.snp.bottom).inset(-11.0)
-            m.left.right.equalToSuperview().inset(30.0)
-            m.height.equalTo(24.0)
+            m.top.equalTo(image.snp.bottom).inset(-11)
+            m.left.right.equalToSuperview().inset(30)
+            m.height.equalTo(24)
         }
         
         shopButton.snp.makeConstraints { (m) in
-            m.top.equalTo(titleLabel.snp.bottom).inset(-18.0)
-            m.left.right.equalToSuperview().inset(41.0)
-            m.height.equalTo(22.0)
-            m.width.equalTo(88.0)
+            m.top.equalTo(titleLabel.snp.bottom).inset(-18)
+            m.left.right.equalToSuperview().inset(41)
+            m.height.equalTo(22)
+            m.width.equalTo(88)
         }
         
         likeImage.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(6.0)
-            m.right.equalToSuperview().inset(9.0)
+            m.top.equalToSuperview().inset(6)
+            m.right.equalToSuperview().inset(9)
             m.height.equalTo(12.57)
-            m.width.equalTo(16.0)
+            m.width.equalTo(16)
         }
       
     }
