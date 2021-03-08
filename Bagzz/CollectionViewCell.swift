@@ -24,7 +24,7 @@ class CollectionViewCell: UICollectionViewCell {
         addSubview(image)
         
         image.snp.makeConstraints { (m) in
-            m.top.equalToSuperview()
+            m.center.equalToSuperview()
             m.width.equalTo(351)
             m.height.equalTo(195)
         }

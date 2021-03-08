@@ -107,8 +107,6 @@ class HomeView: UIView {
         
         fetchData()
 
- 
-
     }
     
     
@@ -116,56 +114,50 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-
-    
+  
     func elementConstraints() {
         menuButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(63)
+            m.top.equalTo(safeAreaLayoutGuide.snp.top).inset(19)
             m.left.equalToSuperview().inset(12)
             m.height.equalTo(14)
             m.width.equalTo(24)
         }
         
         titleLabel.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(53)
+            m.top.equalTo(safeAreaLayoutGuide.snp.top).inset(9)
             m.left.equalTo(menuButton.snp.right).inset(-18)
             m.height.equalTo(29)
         }
         
         photoImage.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(54)
+            m.top.equalTo(safeAreaLayoutGuide.snp.top).inset(10)
             m.right.equalToSuperview().inset(12)
             m.height.width.equalTo(32)
+            m.bottom.equalTo(carouselCollectionView.snp.top).inset(-24)
         }
         
         carouselCollectionView.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(110)
-            m.left.right.equalToSuperview().inset(12)
+            m.centerX.equalToSuperview()
             m.width.equalTo(351)
             m.height.equalTo(195)
         }
         
         leftButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(264)
-            m.left.equalToSuperview().inset(249)
+            m.top.equalTo(safeAreaLayoutGuide.snp.top).inset(220)
+            m.left.equalToSuperview().inset(250)
             m.height.width.equalTo(51)
         }
         
         rightButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(264)
-            m.right.equalToSuperview().inset(22)
-            m.height.width.equalTo(51)
-        }
-        leftButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(264)
-            m.left.equalToSuperview().inset(249.5)
+            m.top.equalTo(safeAreaLayoutGuide.snp.top).inset(220)
+            m.left.equalToSuperview().inset(302)
             m.height.width.equalTo(51)
         }
         
         catalogCollectionView.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().inset(345)
-            m.left.right.equalToSuperview().inset(12)
-            m.width.equalToSuperview().inset(11)
+            m.top.equalTo(carouselCollectionView.snp.bottom).inset(-40)
+            m.centerX.equalToSuperview()
+            m.width.equalTo(354)
             m.bottom.equalToSuperview()
         }
 
@@ -190,10 +182,7 @@ class HomeView: UIView {
         }
     }
     
-    func loadData() {
-        
-    }
-    
+
     func fetchData() {
 
         AF.request("https://jsonplaceholder.typicode.com/photos", method: .get).validate().responseJSON { response in
@@ -255,10 +244,10 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
             if !self.isLoading {
                 self.isLoading = true
                 let start = arrayToDisplay.count
-                let end = start + 50
+                let end = start + 20
                 DispatchQueue.global().async {
                     for i in start...end {
-                        self.arrayToDisplay.append(self.bags[i])
+                            self.arrayToDisplay.append(self.bags[i])
                     }
                     DispatchQueue.main.async {
                         self.catalogCollectionView.reloadData()

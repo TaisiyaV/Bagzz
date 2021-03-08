@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class TabBarController: UITabBarController {
 
@@ -16,7 +17,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let viewTabBar = UIView(frame: CGRect(x: 11, y: 0, width: 352, height: 65))
+        let viewTabBar = UIView(frame: .zero)
         viewTabBar.backgroundColor = .white
         viewTabBar.layer.cornerRadius = 32
         viewTabBar.layer.shadowColor = UIColor.black.cgColor
@@ -24,6 +25,12 @@ class TabBarController: UITabBarController {
         viewTabBar.layer.shadowOpacity = 0.1
         viewTabBar.layer.shadowRadius = 5.0
         tabBar.addSubview(viewTabBar)
+        
+        viewTabBar.snp.makeConstraints { (m) in
+            m.left.right.equalToSuperview().inset(11)
+            m.top.equalToSuperview()
+            m.height.equalTo(65)
+        }
         
 
         tabBar.unselectedItemTintColor = .black
