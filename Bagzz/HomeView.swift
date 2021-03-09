@@ -240,25 +240,21 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
         if indexPath.row == arrayToDisplay.count - 2 && !self.isLoading {
-        
-            if !self.isLoading {
-                self.isLoading = true
-                let start = arrayToDisplay.count
-                let end = start + 20
-                DispatchQueue.global().async {
-                    for i in start...end {
-                            self.arrayToDisplay.append(self.bags[i])
-                    }
-                    DispatchQueue.main.async {
-                        self.catalogCollectionView.reloadData()
-                        self.isLoading = false
-                    }
+            self.isLoading = true
+            let start = arrayToDisplay.count
+            let end = start + 20
+            DispatchQueue.global().async {
+                for i in start...end {
+                        self.arrayToDisplay.append(self.bags[i])
+                }
+                DispatchQueue.main.async {
+                    self.catalogCollectionView.reloadData()
+                    self.isLoading = false
                 }
             }
         }
     }
     
-
 }
 
 
